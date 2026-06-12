@@ -1,0 +1,59 @@
+{
+  "id": "osm-world-map",
+  "title": "OSM World Map",
+  "description": "Real-world map (OpenStreetMap) inside Foundry VTT: pins linked to journal entries, address search (Nominatim), routes with estimated time (OSRM) that can advance the Calendaria clock, and themed settings (Vampire, Call of Cthulhu, Delta Green). Built for contemporary tabletop RPGs. Interface available in English and Spanish (auto-selected by client language).",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "14.364"
+  },
+  "authors": [
+    {
+      "name": "kheryan80"
+    }
+  ],
+  "esmodules": [
+    "scripts/osm-world-map.js"
+  ],
+  "styles": [
+    "styles/osm-world-map.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "es",
+      "name": "Español",
+      "path": "lang/es.json"
+    },
+    {
+      "lang": "fr",
+      "name": "Français",
+      "path": "lang/fr.json"
+    },
+    {
+      "lang": "de",
+      "name": "Deutsch",
+      "path": "lang/de.json"
+    },
+    {
+      "lang": "it",
+      "name": "Italiano",
+      "path": "lang/it.json"
+    },
+    {
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "lang/pt-BR.json"
+    }
+  ],
+  "license": "MIT",
+  "readme": "https://github.com/kheryan80/osm-world-map/blob/main/README.md",
+  "url": "https://github.com/kheryan80/osm-world-map",
+  "manifest": "https://github.com/kheryan80/osm-world-map/releases/latest/download/module.json",
+  "download": "https://github.com/kheryan80/osm-world-map/releases/latest/download/module.zip",
+  "flags": {}
+}

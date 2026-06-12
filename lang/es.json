@@ -1,0 +1,97 @@
+{
+  "OSMWM": {
+    "Settings": {
+      "TileUrl": {
+        "Name": "URL de teselas del mapa",
+        "Hint": "Servidor de teselas. Por defecto OpenStreetMap. (Recuerda respetar la política de uso del servidor que elijas.)"
+      },
+      "Theme": {
+        "Name": "Ambientación (tema visual)",
+        "Hint": "Estética del mapa y de los pines. Ninguna opción necesita clave ni servicios extra.",
+        "None": "Normal (OpenStreetMap)",
+        "CartoDark": "Vampiro — CARTO oscuro + rojo",
+        "Cthulhu": "La Llamada de Cthulhu — mapa sepia envejecido",
+        "DeltaGreen": "Delta Green — oscuro clasificado verde"
+      }
+    },
+    "Keybind": {
+      "Toggle": "Mostrar / ocultar el mapa del mundo"
+    },
+    "Control": {
+      "Title": "Mapa del mundo (OSM)"
+    },
+    "Panel": {
+      "Title": "Mapa del mundo"
+    },
+    "Btn": {
+      "Show": "Mostrar a los jugadores",
+      "AddPin": "Añadir pin (clic en el mapa)",
+      "Route": "Crear ruta",
+      "Close": "Cerrar"
+    },
+    "Pin": {
+      "Generic": "Genérico",
+      "Town": "Pueblo / ciudad",
+      "Tower": "Torre / fortaleza",
+      "Safehouse": "Casa franca",
+      "Npc": "PNJ / contacto",
+      "Clue": "Pista / interés",
+      "Danger": "Peligro",
+      "Church": "Iglesia / templo",
+      "Port": "Puerto / aeropuerto",
+      "Vampire": "Guarida vampírica",
+      "Occult": "Culto / ocultismo",
+      "Anomaly": "Criatura / anomalía",
+      "Archive": "Archivo / biblioteca"
+    },
+    "Search": {
+      "Placeholder": "Buscar dirección o lugar…",
+      "NotFound": "No se encontró nada."
+    },
+    "Notify": {
+      "ShownToPlayers": "Mapa mostrado a los jugadores.",
+      "LibsError": "OSM World Map: no se pudieron cargar las librerías del mapa (¿sin conexión a internet?). Mira el README para alojarlas localmente.",
+      "SearchFailed": "OSM World Map: el buscador no se cargó. Revisa la consola (F12).",
+      "AddPinMode": "Modo añadir pin: haz clic en el mapa donde quieras colocarlo.",
+      "RouteOff": "Modo ruta desactivado.",
+      "RoutePluginFailed": "El plugin de rutas no se cargó correctamente.",
+      "RouteMode": "Modo ruta: haz clic en el mapa para fijar origen y destino (el tercer clic reinicia).",
+      "JournalMissing": "El diario enlazado ya no existe.",
+      "ClockAdvanced": "Reloj de Calendaria avanzado {dur}.",
+      "ClockFailed": "No se pudo avanzar el tiempo. Revisa la firma de CALENDARIA.api.advanceTime en el README."
+    },
+    "Popup": {
+      "DefaultLabel": "Pin",
+      "SecretTag": "Secreto (DJ): ",
+      "OpenJournal": "Abrir diario",
+      "Hide": "Ocultar a jugadores",
+      "Reveal": "Revelar a jugadores",
+      "Edit": "Editar",
+      "Delete": "Eliminar"
+    },
+    "Tooltip": {
+      "HiddenFromPlayers": "Oculto a jugadores"
+    },
+    "Dialog": {
+      "New": "Nuevo pin",
+      "Edit": "Editar pin",
+      "Save": "Guardar",
+      "Cancel": "Cancelar"
+    },
+    "Form": {
+      "Label": "Etiqueta del pin",
+      "LabelPlaceholder": "p. ej. Casa franca de Londres",
+      "Type": "Tipo de lugar (icono)",
+      "Note": "Información visible para los jugadores",
+      "NotePlaceholder": "Lo que ven los jugadores al abrir el pin",
+      "Secret": "Información secreta (solo DJ)",
+      "SecretPlaceholder": "Notas solo para ti",
+      "Journal": "Enlazar a diario",
+      "JournalNone": "— Sin enlace —",
+      "Visible": "Visible para los jugadores"
+    },
+    "Route": {
+      "AdvanceClock": "Avanzar reloj"
+    }
+  }
+}

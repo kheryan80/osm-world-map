@@ -1,0 +1,79 @@
+{
+  "OSMWM": {
+    "Settings": {
+      "TileUrl": {
+        "Name": "URL delle tessere della mappa",
+        "Hint": "Server delle tessere. Per impostazione predefinita OpenStreetMap. (Ricorda di rispettare le politiche d'uso del server scelto.)"
+      },
+      "Theme": {
+        "Name": "Ambientazione (tema visivo)",
+        "Hint": "Aspetto della mappa e dei segnaposto. Nessuna opzione richiede una chiave API o servizi extra.",
+        "None": "Normale (OpenStreetMap)",
+        "CartoDark": "Vampiro — CARTO scuro + rosso",
+        "Cthulhu": "Il Richiamo di Cthulhu — mappa seppia invecchiata",
+        "DeltaGreen": "Delta Green — scuro, classificato, verde"
+      }
+    },
+    "Keybind": { "Toggle": "Mostra / nascondi la mappa del mondo" },
+    "Control": { "Title": "Mappa del mondo (OSM)" },
+    "Panel": { "Title": "Mappa del mondo" },
+    "Btn": {
+      "Show": "Mostra ai giocatori",
+      "AddPin": "Aggiungi segnaposto (clic sulla mappa)",
+      "Route": "Crea percorso",
+      "Close": "Chiudi"
+    },
+    "Pin": {
+      "Generic": "Generico",
+      "Town": "Paese / città",
+      "Tower": "Torre / fortezza",
+      "Safehouse": "Rifugio sicuro",
+      "Npc": "PNG / contatto",
+      "Clue": "Indizio / punto d'interesse",
+      "Danger": "Pericolo",
+      "Church": "Chiesa / tempio",
+      "Port": "Porto / aeroporto",
+      "Vampire": "Covo vampirico",
+      "Occult": "Culto / occultismo",
+      "Anomaly": "Creatura / anomalia",
+      "Archive": "Archivio / biblioteca"
+    },
+    "Search": { "Placeholder": "Cerca indirizzo o luogo…", "NotFound": "Nessun risultato." },
+    "Notify": {
+      "ShownToPlayers": "Mappa mostrata ai giocatori.",
+      "LibsError": "OSM World Map: impossibile caricare le librerie della mappa (nessuna connessione a Internet?). Consulta il README per ospitarle localmente.",
+      "SearchFailed": "OSM World Map: la ricerca non è stata caricata. Controlla la console (F12).",
+      "AddPinMode": "Modalità aggiungi segnaposto: clicca sulla mappa dove vuoi posizionarlo.",
+      "RouteOff": "Modalità percorso disattivata.",
+      "RoutePluginFailed": "Il plugin dei percorsi non è stato caricato correttamente.",
+      "RouteMode": "Modalità percorso: clicca sulla mappa per fissare partenza e arrivo (un terzo clic azzera).",
+      "JournalMissing": "Il diario collegato non esiste più.",
+      "ClockAdvanced": "Orologio di Calendaria avanzato di {dur}.",
+      "ClockFailed": "Impossibile avanzare il tempo. Controlla la firma di CALENDARIA.api.advanceTime nel README."
+    },
+    "Popup": {
+      "DefaultLabel": "Segnaposto",
+      "SecretTag": "Segreto (GM): ",
+      "OpenJournal": "Apri diario",
+      "Hide": "Nascondi ai giocatori",
+      "Reveal": "Rivela ai giocatori",
+      "Edit": "Modifica",
+      "Delete": "Elimina"
+    },
+    "Tooltip": { "HiddenFromPlayers": "Nascosto ai giocatori" },
+    "Dialog": { "New": "Nuovo segnaposto", "Edit": "Modifica segnaposto", "Save": "Salva", "Cancel": "Annulla" },
+    "Form": {
+      "Label": "Etichetta del segnaposto",
+      "LabelPlaceholder": "es. rifugio di Londra",
+      "Type": "Tipo di luogo (icona)",
+      "Note": "Info visibile ai giocatori",
+      "NotePlaceholder": "Ciò che i giocatori vedono aprendo il segnaposto",
+      "Secret": "Info segrete (solo GM)",
+      "SecretPlaceholder": "Note solo per te",
+      "Journal": "Collega a un diario",
+      "JournalNone": "— Nessun collegamento —",
+      "Visible": "Visibile ai giocatori"
+    },
+    "Route": { "AdvanceClock": "Avanza l'orologio" }
+  }
+}

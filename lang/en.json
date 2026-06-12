@@ -1,0 +1,97 @@
+{
+  "OSMWM": {
+    "Settings": {
+      "TileUrl": {
+        "Name": "Map tile URL",
+        "Hint": "Tile server. OpenStreetMap by default. (Remember to respect the usage policy of whichever server you choose.)"
+      },
+      "Theme": {
+        "Name": "Setting (visual theme)",
+        "Hint": "Look of the map and pins. None of the options need an API key or extra services.",
+        "None": "Normal (OpenStreetMap)",
+        "CartoDark": "Vampire — dark CARTO + red",
+        "Cthulhu": "Call of Cthulhu — aged sepia map",
+        "DeltaGreen": "Delta Green — classified dark green"
+      }
+    },
+    "Keybind": {
+      "Toggle": "Show / hide the world map"
+    },
+    "Control": {
+      "Title": "World map (OSM)"
+    },
+    "Panel": {
+      "Title": "World map"
+    },
+    "Btn": {
+      "Show": "Show to players",
+      "AddPin": "Add pin (click on the map)",
+      "Route": "Create route",
+      "Close": "Close"
+    },
+    "Pin": {
+      "Generic": "Generic",
+      "Town": "Town / city",
+      "Tower": "Tower / fortress",
+      "Safehouse": "Safe house",
+      "Npc": "NPC / contact",
+      "Clue": "Clue / point of interest",
+      "Danger": "Danger",
+      "Church": "Church / temple",
+      "Port": "Port / airport",
+      "Vampire": "Vampire lair",
+      "Occult": "Cult / occult",
+      "Anomaly": "Creature / anomaly",
+      "Archive": "Archive / library"
+    },
+    "Search": {
+      "Placeholder": "Search address or place…",
+      "NotFound": "Nothing found."
+    },
+    "Notify": {
+      "ShownToPlayers": "Map shown to players.",
+      "LibsError": "OSM World Map: the map libraries could not be loaded (no internet connection?). See the README to host them locally.",
+      "SearchFailed": "OSM World Map: the search box failed to load. Check the console (F12).",
+      "AddPinMode": "Add-pin mode: click on the map where you want to place it.",
+      "RouteOff": "Route mode off.",
+      "RoutePluginFailed": "The routing plugin failed to load correctly.",
+      "RouteMode": "Route mode: click on the map to set start and end (a third click resets).",
+      "JournalMissing": "The linked journal no longer exists.",
+      "ClockAdvanced": "Calendaria clock advanced {dur}.",
+      "ClockFailed": "Could not advance time. Check the signature of CALENDARIA.api.advanceTime in the README."
+    },
+    "Popup": {
+      "DefaultLabel": "Pin",
+      "SecretTag": "Secret (GM): ",
+      "OpenJournal": "Open journal",
+      "Hide": "Hide from players",
+      "Reveal": "Reveal to players",
+      "Edit": "Edit",
+      "Delete": "Delete"
+    },
+    "Tooltip": {
+      "HiddenFromPlayers": "Hidden from players"
+    },
+    "Dialog": {
+      "New": "New pin",
+      "Edit": "Edit pin",
+      "Save": "Save",
+      "Cancel": "Cancel"
+    },
+    "Form": {
+      "Label": "Pin label",
+      "LabelPlaceholder": "e.g. London safe house",
+      "Type": "Place type (icon)",
+      "Note": "Info visible to players",
+      "NotePlaceholder": "What players see when they open the pin",
+      "Secret": "Secret info (GM only)",
+      "SecretPlaceholder": "Notes for your eyes only",
+      "Journal": "Link to journal",
+      "JournalNone": "— No link —",
+      "Visible": "Visible to players"
+    },
+    "Route": {
+      "AdvanceClock": "Advance clock"
+    }
+  }
+}

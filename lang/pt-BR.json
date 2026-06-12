@@ -1,0 +1,79 @@
+{
+  "OSMWM": {
+    "Settings": {
+      "TileUrl": {
+        "Name": "URL dos tiles do mapa",
+        "Hint": "Servidor de tiles. OpenStreetMap por padrão. (Lembre-se de respeitar a política de uso do servidor escolhido.)"
+      },
+      "Theme": {
+        "Name": "Ambientação (tema visual)",
+        "Hint": "Aparência do mapa e dos marcadores. Nenhuma opção precisa de chave de API ou serviços extras.",
+        "None": "Normal (OpenStreetMap)",
+        "CartoDark": "Vampiro — CARTO escuro + vermelho",
+        "Cthulhu": "Chamado de Cthulhu — mapa sépia envelhecido",
+        "DeltaGreen": "Delta Green — escuro, classificado, verde"
+      }
+    },
+    "Keybind": { "Toggle": "Mostrar / ocultar o mapa do mundo" },
+    "Control": { "Title": "Mapa do mundo (OSM)" },
+    "Panel": { "Title": "Mapa do mundo" },
+    "Btn": {
+      "Show": "Mostrar aos jogadores",
+      "AddPin": "Adicionar marcador (clique no mapa)",
+      "Route": "Criar rota",
+      "Close": "Fechar"
+    },
+    "Pin": {
+      "Generic": "Genérico",
+      "Town": "Vila / cidade",
+      "Tower": "Torre / fortaleza",
+      "Safehouse": "Esconderijo seguro",
+      "Npc": "NPC / contato",
+      "Clue": "Pista / ponto de interesse",
+      "Danger": "Perigo",
+      "Church": "Igreja / templo",
+      "Port": "Porto / aeroporto",
+      "Vampire": "Covil vampírico",
+      "Occult": "Culto / ocultismo",
+      "Anomaly": "Criatura / anomalia",
+      "Archive": "Arquivo / biblioteca"
+    },
+    "Search": { "Placeholder": "Buscar endereço ou lugar…", "NotFound": "Nada encontrado." },
+    "Notify": {
+      "ShownToPlayers": "Mapa mostrado aos jogadores.",
+      "LibsError": "OSM World Map: não foi possível carregar as bibliotecas do mapa (sem conexão com a internet?). Veja o README para hospedá-las localmente.",
+      "SearchFailed": "OSM World Map: a busca não carregou. Verifique o console (F12).",
+      "AddPinMode": "Modo adicionar marcador: clique no mapa onde quiser colocá-lo.",
+      "RouteOff": "Modo rota desativado.",
+      "RoutePluginFailed": "O plugin de rotas não carregou corretamente.",
+      "RouteMode": "Modo rota: clique no mapa para definir início e fim (um terceiro clique reinicia).",
+      "JournalMissing": "O diário vinculado não existe mais.",
+      "ClockAdvanced": "Relógio de Calendaria avançado em {dur}.",
+      "ClockFailed": "Não foi possível avançar o tempo. Verifique a assinatura de CALENDARIA.api.advanceTime no README."
+    },
+    "Popup": {
+      "DefaultLabel": "Marcador",
+      "SecretTag": "Secreto (Mestre): ",
+      "OpenJournal": "Abrir diário",
+      "Hide": "Ocultar dos jogadores",
+      "Reveal": "Revelar aos jogadores",
+      "Edit": "Editar",
+      "Delete": "Excluir"
+    },
+    "Tooltip": { "HiddenFromPlayers": "Oculto dos jogadores" },
+    "Dialog": { "New": "Novo marcador", "Edit": "Editar marcador", "Save": "Salvar", "Cancel": "Cancelar" },
+    "Form": {
+      "Label": "Rótulo do marcador",
+      "LabelPlaceholder": "ex. esconderijo de Londres",
+      "Type": "Tipo de lugar (ícone)",
+      "Note": "Info visível aos jogadores",
+      "NotePlaceholder": "O que os jogadores veem ao abrir o marcador",
+      "Secret": "Info secreta (só Mestre)",
+      "SecretPlaceholder": "Notas só para você",
+      "Journal": "Vincular a um diário",
+      "JournalNone": "— Sem vínculo —",
+      "Visible": "Visível aos jogadores"
+    },
+    "Route": { "AdvanceClock": "Avançar relógio" }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "OSMWM": {
+    "Settings": {
+      "TileUrl": {
+        "Name": "URL der Kartenkacheln",
+        "Hint": "Kachelserver. Standardmäßig OpenStreetMap. (Bitte die Nutzungsrichtlinie des gewählten Servers beachten.)"
+      },
+      "Theme": {
+        "Name": "Setting (visuelles Thema)",
+        "Hint": "Aussehen der Karte und der Marker. Keine Option benötigt einen API-Schlüssel oder zusätzliche Dienste.",
+        "None": "Normal (OpenStreetMap)",
+        "CartoDark": "Vampir — CARTO dunkel + Rot",
+        "Cthulhu": "Cthulhus Ruf — gealterte Sepia-Karte",
+        "DeltaGreen": "Delta Green — geheim, dunkelgrün"
+      }
+    },
+    "Keybind": { "Toggle": "Weltkarte ein-/ausblenden" },
+    "Control": { "Title": "Weltkarte (OSM)" },
+    "Panel": { "Title": "Weltkarte" },
+    "Btn": {
+      "Show": "Spielern zeigen",
+      "AddPin": "Marker hinzufügen (auf die Karte klicken)",
+      "Route": "Route erstellen",
+      "Close": "Schließen"
+    },
+    "Pin": {
+      "Generic": "Allgemein",
+      "Town": "Dorf / Stadt",
+      "Tower": "Turm / Festung",
+      "Safehouse": "Unterschlupf",
+      "Npc": "NSC / Kontakt",
+      "Clue": "Hinweis / Interessenpunkt",
+      "Danger": "Gefahr",
+      "Church": "Kirche / Tempel",
+      "Port": "Hafen / Flughafen",
+      "Vampire": "Vampirnest",
+      "Occult": "Kult / Okkultismus",
+      "Anomaly": "Kreatur / Anomalie",
+      "Archive": "Archiv / Bibliothek"
+    },
+    "Search": { "Placeholder": "Adresse oder Ort suchen…", "NotFound": "Nichts gefunden." },
+    "Notify": {
+      "ShownToPlayers": "Karte den Spielern gezeigt.",
+      "LibsError": "OSM World Map: Die Kartenbibliotheken konnten nicht geladen werden (keine Internetverbindung?). Siehe README, um sie lokal zu hosten.",
+      "SearchFailed": "OSM World Map: Die Suche konnte nicht geladen werden. Konsole prüfen (F12).",
+      "AddPinMode": "Marker-hinzufügen-Modus: Klicke auf die Karte an die gewünschte Stelle.",
+      "RouteOff": "Routenmodus aus.",
+      "RoutePluginFailed": "Das Routing-Plugin konnte nicht korrekt geladen werden.",
+      "RouteMode": "Routenmodus: Auf die Karte klicken, um Start und Ziel festzulegen (ein dritter Klick setzt zurück).",
+      "JournalMissing": "Das verknüpfte Journal existiert nicht mehr.",
+      "ClockAdvanced": "Calendaria-Uhr um {dur} vorgestellt.",
+      "ClockFailed": "Zeit konnte nicht vorgestellt werden. Prüfe die Signatur von CALENDARIA.api.advanceTime im README."
+    },
+    "Popup": {
+      "DefaultLabel": "Marker",
+      "SecretTag": "Geheim (SL): ",
+      "OpenJournal": "Journal öffnen",
+      "Hide": "Vor Spielern verbergen",
+      "Reveal": "Spielern zeigen",
+      "Edit": "Bearbeiten",
+      "Delete": "Löschen"
+    },
+    "Tooltip": { "HiddenFromPlayers": "Vor Spielern verborgen" },
+    "Dialog": { "New": "Neuer Marker", "Edit": "Marker bearbeiten", "Save": "Speichern", "Cancel": "Abbrechen" },
+    "Form": {
+      "Label": "Marker-Bezeichnung",
+      "LabelPlaceholder": "z. B. Unterschlupf in London",
+      "Type": "Ortstyp (Symbol)",
+      "Note": "Für Spieler sichtbare Info",
+      "NotePlaceholder": "Was Spieler sehen, wenn sie den Marker öffnen",
+      "Secret": "Geheime Info (nur SL)",
+      "SecretPlaceholder": "Notizen nur für dich",
+      "Journal": "Mit Journal verknüpfen",
+      "JournalNone": "— Keine Verknüpfung —",
+      "Visible": "Für Spieler sichtbar"
+    },
+    "Route": { "AdvanceClock": "Uhr vorstellen" }
+  }
+}
