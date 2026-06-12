@@ -2,7 +2,7 @@
   "id": "osm-world-map",
   "title": "OSM World Map",
   "description": "Real-world map (OpenStreetMap) inside Foundry VTT: pins linked to journal entries, address search (Nominatim), routes with estimated time (OSRM) that can advance the Calendaria clock, and themed settings (Vampire, Call of Cthulhu, Delta Green). Built for contemporary tabletop RPGs. Interface available in English and Spanish (auto-selected by client language).",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "compatibility": {
     "minimum": "13",
     "verified": "14.364"

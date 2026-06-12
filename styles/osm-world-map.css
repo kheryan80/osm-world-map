@@ -106,7 +106,7 @@
 
 /* El mapa Leaflet hereda fuentes raras de Foundry si no lo fijamos */
 #osm-world-map-panel .leaflet-container {
-  background: #aad3df;
+  background: #15171e;
   font: 12px/1.5 var(--font-primary, "Signika", sans-serif);
 }
 

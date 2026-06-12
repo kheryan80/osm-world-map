@@ -142,6 +142,8 @@ let _libsLoaded = false;
 let _libsPromise = null;
 let _panel = null;
 let _map = null;
+let _resizeObserver = null;
+let _resizeRaf = 0;
 let _tileLayer = null;
 let _labelsLayer = null;
 let _markerLayer = null;
@@ -504,6 +506,17 @@ function initMap() {
   _map.on("click", onMapClick);
   renderMarkers();
   setTimeout(() => _map.invalidateSize(), 60);
+
+  // Al redimensionar el panel (resize: both), Leaflet no se entera del nuevo
+  // tamaño y deja el área extra en blanco. Lo observamos y recalculamos.
+  if (window.ResizeObserver && _panel && !_resizeObserver) {
+    _resizeObserver = new ResizeObserver(() => {
+      if (!_map) return;
+      if (_resizeRaf) cancelAnimationFrame(_resizeRaf);
+      _resizeRaf = requestAnimationFrame(() => _map.invalidateSize());
+    });
+    _resizeObserver.observe(_panel);
+  }
 }
 
 // =====================================================================
