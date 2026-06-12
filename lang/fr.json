@@ -14,9 +14,15 @@
         "DeltaGreen": "Delta Green — sombre, classifié, vert"
       }
     },
-    "Keybind": { "Toggle": "Afficher / masquer la carte du monde" },
-    "Control": { "Title": "Carte du monde (OSM)" },
-    "Panel": { "Title": "Carte du monde" },
+    "Keybind": {
+      "Toggle": "Afficher / masquer la carte du monde"
+    },
+    "Control": {
+      "Title": "Carte du monde (OSM)"
+    },
+    "Panel": {
+      "Title": "Carte du monde"
+    },
     "Btn": {
       "Show": "Montrer aux joueurs",
       "AddPin": "Ajouter un marqueur (cliquez sur la carte)",
@@ -38,7 +44,10 @@
       "Anomaly": "Créature / anomalie",
       "Archive": "Archives / bibliothèque"
     },
-    "Search": { "Placeholder": "Rechercher une adresse ou un lieu…", "NotFound": "Aucun résultat." },
+    "Search": {
+      "Placeholder": "Rechercher une adresse ou un lieu…",
+      "NotFound": "Aucun résultat."
+    },
     "Notify": {
       "ShownToPlayers": "Carte montrée aux joueurs.",
       "LibsError": "OSM World Map : impossible de charger les bibliothèques de la carte (pas de connexion Internet ?). Consultez le README pour les héberger localement.",
@@ -60,8 +69,15 @@
       "Edit": "Modifier",
       "Delete": "Supprimer"
     },
-    "Tooltip": { "HiddenFromPlayers": "Masqué aux joueurs" },
-    "Dialog": { "New": "Nouveau marqueur", "Edit": "Modifier le marqueur", "Save": "Enregistrer", "Cancel": "Annuler" },
+    "Tooltip": {
+      "HiddenFromPlayers": "Masqué aux joueurs"
+    },
+    "Dialog": {
+      "New": "Nouveau marqueur",
+      "Edit": "Modifier le marqueur",
+      "Save": "Enregistrer",
+      "Cancel": "Annuler"
+    },
     "Form": {
       "Label": "Nom du marqueur",
       "LabelPlaceholder": "ex. planque de Londres",
@@ -72,8 +88,13 @@
       "SecretPlaceholder": "Notes pour vous seul",
       "Journal": "Lier à un journal",
       "JournalNone": "— Aucun lien —",
-      "Visible": "Visible par les joueurs"
+      "Visible": "Visible par les joueurs",
+      "Image": "Image (optionnel)",
+      "ImagePlaceholder": "Chemin ou URL d'une image (ou vidéo)",
+      "ImageBrowse": "Parcourir"
     },
-    "Route": { "AdvanceClock": "Avancer l'horloge" }
+    "Route": {
+      "AdvanceClock": "Avancer l'horloge"
+    }
   }
 }

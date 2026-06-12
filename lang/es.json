@@ -88,7 +88,10 @@
       "SecretPlaceholder": "Notas solo para ti",
       "Journal": "Enlazar a diario",
       "JournalNone": "— Sin enlace —",
-      "Visible": "Visible para los jugadores"
+      "Visible": "Visible para los jugadores",
+      "Image": "Imagen (opcional)",
+      "ImagePlaceholder": "Ruta o URL de una imagen (o vídeo)",
+      "ImageBrowse": "Examinar"
     },
     "Route": {
       "AdvanceClock": "Avanzar reloj"

@@ -27,7 +27,7 @@ Edita estos campos con tus datos:
 Foundry instala y actualiza a partir de *releases* de GitHub:
 
 1. En el repo: **Releases → Draft a new release**.
-2. **Tag**: `v1.0.1` (que coincida con `version` en `module.json`).
+2. **Tag**: `v1.1.0` (que coincida con `version` en `module.json`).
 3. Sube **dos archivos** a ese release:
    - `module.json` (el del repo, tal cual).
    - `module.zip` → un zip que contenga la **carpeta** `osm-world-map/` con todo

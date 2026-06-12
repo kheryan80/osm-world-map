@@ -88,7 +88,10 @@
       "SecretPlaceholder": "Notes for your eyes only",
       "Journal": "Link to journal",
       "JournalNone": "— No link —",
-      "Visible": "Visible to players"
+      "Visible": "Visible to players",
+      "Image": "Image (optional)",
+      "ImagePlaceholder": "Path or URL to an image (or video)",
+      "ImageBrowse": "Browse"
     },
     "Route": {
       "AdvanceClock": "Advance clock"

@@ -14,9 +14,15 @@
         "DeltaGreen": "Delta Green — geheim, dunkelgrün"
       }
     },
-    "Keybind": { "Toggle": "Weltkarte ein-/ausblenden" },
-    "Control": { "Title": "Weltkarte (OSM)" },
-    "Panel": { "Title": "Weltkarte" },
+    "Keybind": {
+      "Toggle": "Weltkarte ein-/ausblenden"
+    },
+    "Control": {
+      "Title": "Weltkarte (OSM)"
+    },
+    "Panel": {
+      "Title": "Weltkarte"
+    },
     "Btn": {
       "Show": "Spielern zeigen",
       "AddPin": "Marker hinzufügen (auf die Karte klicken)",
@@ -38,7 +44,10 @@
       "Anomaly": "Kreatur / Anomalie",
       "Archive": "Archiv / Bibliothek"
     },
-    "Search": { "Placeholder": "Adresse oder Ort suchen…", "NotFound": "Nichts gefunden." },
+    "Search": {
+      "Placeholder": "Adresse oder Ort suchen…",
+      "NotFound": "Nichts gefunden."
+    },
     "Notify": {
       "ShownToPlayers": "Karte den Spielern gezeigt.",
       "LibsError": "OSM World Map: Die Kartenbibliotheken konnten nicht geladen werden (keine Internetverbindung?). Siehe README, um sie lokal zu hosten.",
@@ -60,8 +69,15 @@
       "Edit": "Bearbeiten",
       "Delete": "Löschen"
     },
-    "Tooltip": { "HiddenFromPlayers": "Vor Spielern verborgen" },
-    "Dialog": { "New": "Neuer Marker", "Edit": "Marker bearbeiten", "Save": "Speichern", "Cancel": "Abbrechen" },
+    "Tooltip": {
+      "HiddenFromPlayers": "Vor Spielern verborgen"
+    },
+    "Dialog": {
+      "New": "Neuer Marker",
+      "Edit": "Marker bearbeiten",
+      "Save": "Speichern",
+      "Cancel": "Abbrechen"
+    },
     "Form": {
       "Label": "Marker-Bezeichnung",
       "LabelPlaceholder": "z. B. Unterschlupf in London",
@@ -72,8 +88,13 @@
       "SecretPlaceholder": "Notizen nur für dich",
       "Journal": "Mit Journal verknüpfen",
       "JournalNone": "— Keine Verknüpfung —",
-      "Visible": "Für Spieler sichtbar"
+      "Visible": "Für Spieler sichtbar",
+      "Image": "Bild (optional)",
+      "ImagePlaceholder": "Pfad oder URL eines Bildes (oder Videos)",
+      "ImageBrowse": "Durchsuchen"
     },
-    "Route": { "AdvanceClock": "Uhr vorstellen" }
+    "Route": {
+      "AdvanceClock": "Uhr vorstellen"
+    }
   }
 }

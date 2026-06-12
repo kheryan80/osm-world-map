@@ -386,6 +386,7 @@ async function openMap() {
 }
 
 function closeMap() {
+  hideHoverImage();
   if (_panel) _panel.style.display = "none";
 }
 
@@ -528,6 +529,7 @@ function getMarkers() {
 
 function renderMarkers() {
   if (!_map || !_markerLayer || !window.L) return;
+  hideHoverImage();
   _markerLayer.clearLayers();
   const isGM = game.user.isGM;
   for (const m of getMarkers()) {
@@ -537,8 +539,67 @@ function renderMarkers() {
       marker.setOpacity(0.55); // el DJ ve los ocultos atenuados
       marker.bindTooltip(t10n("OSMWM.Tooltip.HiddenFromPlayers"), { direction: "top" });
     }
+    if (m.image) {
+      marker.on("mouseover", () => showHoverImage(m.image, m.label));
+      marker.on("mouseout", () => hideHoverImage());
+    }
     marker.bindPopup(() => buildPopup(m));
   }
+}
+
+// =====================================================================
+//  Imagen al pasar el ratón (estilo Image Hover), abajo a la izquierda
+//  de la pantalla de Foundry, fuera del panel para no tapar el mapa.
+// =====================================================================
+function isVideoSrc(src) {
+  return /\.(webm|mp4|m4v|ogg|ogv)(\?|#|$)/i.test(src);
+}
+
+function ensureHoverEl() {
+  let el = document.getElementById("osm-world-map-hover");
+  if (!el) {
+    el = document.createElement("div");
+    el.id = "osm-world-map-hover";
+    el.hidden = true;
+    el.innerHTML = `<img alt=""/><video muted loop playsinline></video><span class="owm-hover-cap"></span>`;
+    document.body.appendChild(el);
+  }
+  return el;
+}
+
+function showHoverImage(src, label) {
+  if (!src) return;
+  const el = ensureHoverEl();
+  const img = el.querySelector("img");
+  const vid = el.querySelector("video");
+  const cap = el.querySelector(".owm-hover-cap");
+  if (isVideoSrc(src)) {
+    img.style.display = "none";
+    vid.src = src;
+    vid.style.display = "";
+    vid.play?.().catch(() => {});
+  } else {
+    vid.pause?.();
+    vid.removeAttribute("src");
+    vid.style.display = "none";
+    img.src = src;
+    img.style.display = "";
+  }
+  if (cap) {
+    cap.textContent = label || "";
+    cap.style.display = label ? "" : "none";
+  }
+  el.hidden = false;
+}
+
+function hideHoverImage() {
+  const el = document.getElementById("osm-world-map-hover");
+  if (!el) return;
+  el.hidden = true;
+  const vid = el.querySelector("video");
+  if (vid) { vid.pause?.(); vid.removeAttribute("src"); }
+  const img = el.querySelector("img");
+  if (img) img.removeAttribute("src");
 }
 
 function buildPopup(m) {
@@ -609,6 +670,7 @@ function buildPopup(m) {
 }
 
 function onMapClick(ev) {
+  hideHoverImage();
   if (_routingControl) {
     addRouteWaypoint(ev.latlng);
     return;
@@ -628,6 +690,7 @@ async function handleAddPin(latlng) {
     lng: latlng.lng,
     label: data.label,
     type: data.type,
+    image: data.image,
     note: data.note,
     secret: data.secret,
     journalUuid: data.journalUuid,
@@ -645,7 +708,7 @@ async function editMarker(id) {
   if (!data) return;
   const updated = markers.map((x) =>
     x.id === id
-      ? { ...x, label: data.label, type: data.type, note: data.note, secret: data.secret, journalUuid: data.journalUuid, visible: data.visible }
+      ? { ...x, label: data.label, type: data.type, image: data.image, note: data.note, secret: data.secret, journalUuid: data.journalUuid, visible: data.visible }
       : x
   );
   await game.settings.set(MODULE_ID, "markers", updated);
@@ -663,12 +726,37 @@ async function removeMarker(id) {
 
 function setAddPinMode(on) {
   _addPinMode = on;
+  if (on) hideHoverImage();
   if (_panel) _panel.classList.toggle("owm-add-mode", on);
   if (on) ui.notifications.info(t10n("OSMWM.Notify.AddPinMode"));
 }
 
 function escapeHtml(s) {
   return foundry.utils?.escapeHTML ? foundry.utils.escapeHTML(s) : String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+// Conecta el botón "examinar" con el explorador de archivos de Foundry.
+function wireFilePicker(root) {
+  if (!root) return;
+  const btn = root.querySelector(".owm-pin-pick");
+  const input = root.querySelector('[name="image"]');
+  if (!btn || !input || btn.dataset.wired) return;
+  btn.dataset.wired = "1";
+  btn.addEventListener("click", () => {
+    const FP = foundry.applications?.apps?.FilePicker?.implementation
+            ?? foundry.applications?.apps?.FilePicker
+            ?? window.FilePicker;
+    if (!FP) return;
+    try {
+      new FP({
+        type: "imagevideo",
+        current: input.value || "",
+        callback: (path) => { input.value = path; }
+      }).render(true);
+    } catch (e) {
+      console.error(`${MODULE_ID} | error al abrir el explorador de archivos`, e);
+    }
+  });
 }
 
 async function promptPinDialog(initial = {}) {
@@ -688,6 +776,11 @@ async function promptPinDialog(initial = {}) {
       <input type="text" name="label" placeholder="${t10n("OSMWM.Form.LabelPlaceholder")}" value="${escapeHtml(initial.label ?? "")}" autofocus/>
       <label>${t10n("OSMWM.Form.Type")}</label>
       <select name="type">${typeOptions}</select>
+      <label>${t10n("OSMWM.Form.Image")}</label>
+      <div class="owm-img-row">
+        <input type="text" name="image" placeholder="${t10n("OSMWM.Form.ImagePlaceholder")}" value="${escapeHtml(initial.image ?? "")}"/>
+        <button type="button" class="owm-pin-pick" title="${t10n("OSMWM.Form.ImageBrowse")}"><i class="fa-solid fa-folder-open"></i></button>
+      </div>
       <label>${t10n("OSMWM.Form.Note")}</label>
       <textarea name="note" rows="2" placeholder="${t10n("OSMWM.Form.NotePlaceholder")}">${escapeHtml(initial.note ?? "")}</textarea>
       <label>${t10n("OSMWM.Form.Secret")}</label>
@@ -700,6 +793,7 @@ async function promptPinDialog(initial = {}) {
   const read = (root) => ({
     label: root.querySelector('[name="label"]')?.value || t10n("OSMWM.Popup.DefaultLabel"),
     type: root.querySelector('[name="type"]')?.value || "generic",
+    image: root.querySelector('[name="image"]')?.value?.trim() || "",
     note: root.querySelector('[name="note"]')?.value || "",
     secret: root.querySelector('[name="secret"]')?.value || "",
     journalUuid: root.querySelector('[name="journal"]')?.value || null,
@@ -709,6 +803,10 @@ async function promptPinDialog(initial = {}) {
   const DV2 = foundry.applications?.api?.DialogV2;
   if (DV2) {
     let result = null;
+    Hooks.once("renderDialogV2", (app, element) => {
+      const root = element instanceof HTMLElement ? element : (element?.[0] ?? element);
+      wireFilePicker(root);
+    });
     try {
       result = await DV2.wait(
         {
@@ -742,6 +840,7 @@ async function promptPinDialog(initial = {}) {
         cancel: { label: t10n("OSMWM.Dialog.Cancel"), callback: () => resolve(null) }
       },
       default: "ok",
+      render: (html) => wireFilePicker(html?.[0] ?? html),
       close: () => resolve(null)
     }).render(true);
   });

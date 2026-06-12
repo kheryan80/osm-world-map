@@ -14,9 +14,15 @@
         "DeltaGreen": "Delta Green — escuro, classificado, verde"
       }
     },
-    "Keybind": { "Toggle": "Mostrar / ocultar o mapa do mundo" },
-    "Control": { "Title": "Mapa do mundo (OSM)" },
-    "Panel": { "Title": "Mapa do mundo" },
+    "Keybind": {
+      "Toggle": "Mostrar / ocultar o mapa do mundo"
+    },
+    "Control": {
+      "Title": "Mapa do mundo (OSM)"
+    },
+    "Panel": {
+      "Title": "Mapa do mundo"
+    },
     "Btn": {
       "Show": "Mostrar aos jogadores",
       "AddPin": "Adicionar marcador (clique no mapa)",
@@ -38,7 +44,10 @@
       "Anomaly": "Criatura / anomalia",
       "Archive": "Arquivo / biblioteca"
     },
-    "Search": { "Placeholder": "Buscar endereço ou lugar…", "NotFound": "Nada encontrado." },
+    "Search": {
+      "Placeholder": "Buscar endereço ou lugar…",
+      "NotFound": "Nada encontrado."
+    },
     "Notify": {
       "ShownToPlayers": "Mapa mostrado aos jogadores.",
       "LibsError": "OSM World Map: não foi possível carregar as bibliotecas do mapa (sem conexão com a internet?). Veja o README para hospedá-las localmente.",
@@ -60,8 +69,15 @@
       "Edit": "Editar",
       "Delete": "Excluir"
     },
-    "Tooltip": { "HiddenFromPlayers": "Oculto dos jogadores" },
-    "Dialog": { "New": "Novo marcador", "Edit": "Editar marcador", "Save": "Salvar", "Cancel": "Cancelar" },
+    "Tooltip": {
+      "HiddenFromPlayers": "Oculto dos jogadores"
+    },
+    "Dialog": {
+      "New": "Novo marcador",
+      "Edit": "Editar marcador",
+      "Save": "Salvar",
+      "Cancel": "Cancelar"
+    },
     "Form": {
       "Label": "Rótulo do marcador",
       "LabelPlaceholder": "ex. esconderijo de Londres",
@@ -72,8 +88,13 @@
       "SecretPlaceholder": "Notas só para você",
       "Journal": "Vincular a um diário",
       "JournalNone": "— Sem vínculo —",
-      "Visible": "Visível aos jogadores"
+      "Visible": "Visível aos jogadores",
+      "Image": "Imagem (opcional)",
+      "ImagePlaceholder": "Caminho ou URL de uma imagem (ou vídeo)",
+      "ImageBrowse": "Procurar"
     },
-    "Route": { "AdvanceClock": "Avançar relógio" }
+    "Route": {
+      "AdvanceClock": "Avançar relógio"
+    }
   }
 }

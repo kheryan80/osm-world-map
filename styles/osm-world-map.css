@@ -550,3 +550,61 @@
     animation: none;
   }
 }
+
+/* Fila del campo "imagen" en el diálogo: input + botón examinar */
+.owm-form .owm-img-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.owm-form .owm-img-row input {
+  flex: 1 1 auto;
+}
+.owm-form .owm-img-row .owm-pin-pick {
+  flex: 0 0 auto;
+  width: 30px;
+  height: 28px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Imagen al pasar el ratón, fija abajo a la izquierda de la pantalla.
+   pointer-events:none para no bloquear nunca clics del lienzo o la UI. */
+#osm-world-map-hover {
+  position: fixed;
+  left: 14px;
+  bottom: 14px;
+  z-index: 1000;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  filter: drop-shadow(0 8px 22px rgba(0, 0, 0, 0.75));
+}
+#osm-world-map-hover[hidden] {
+  display: none;
+}
+#osm-world-map-hover img,
+#osm-world-map-hover video {
+  max-width: 24vw;
+  max-height: 40vh;
+  width: auto;
+  height: auto;
+  border: 2px solid rgba(0, 0, 0, 0.85);
+  border-radius: 6px;
+  background: #15171e;
+  object-fit: contain;
+}
+#osm-world-map-hover .owm-hover-cap {
+  max-width: 24vw;
+  padding: 2px 9px;
+  background: rgba(10, 12, 18, 0.88);
+  color: #f0e9e9;
+  border: 1px solid rgba(0, 0, 0, 0.85);
+  border-radius: 4px;
+  font: 600 13px/1.3 var(--font-primary, "Signika", sans-serif);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

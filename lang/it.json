@@ -14,9 +14,15 @@
         "DeltaGreen": "Delta Green — scuro, classificato, verde"
       }
     },
-    "Keybind": { "Toggle": "Mostra / nascondi la mappa del mondo" },
-    "Control": { "Title": "Mappa del mondo (OSM)" },
-    "Panel": { "Title": "Mappa del mondo" },
+    "Keybind": {
+      "Toggle": "Mostra / nascondi la mappa del mondo"
+    },
+    "Control": {
+      "Title": "Mappa del mondo (OSM)"
+    },
+    "Panel": {
+      "Title": "Mappa del mondo"
+    },
     "Btn": {
       "Show": "Mostra ai giocatori",
       "AddPin": "Aggiungi segnaposto (clic sulla mappa)",
@@ -38,7 +44,10 @@
       "Anomaly": "Creatura / anomalia",
       "Archive": "Archivio / biblioteca"
     },
-    "Search": { "Placeholder": "Cerca indirizzo o luogo…", "NotFound": "Nessun risultato." },
+    "Search": {
+      "Placeholder": "Cerca indirizzo o luogo…",
+      "NotFound": "Nessun risultato."
+    },
     "Notify": {
       "ShownToPlayers": "Mappa mostrata ai giocatori.",
       "LibsError": "OSM World Map: impossibile caricare le librerie della mappa (nessuna connessione a Internet?). Consulta il README per ospitarle localmente.",
@@ -60,8 +69,15 @@
       "Edit": "Modifica",
       "Delete": "Elimina"
     },
-    "Tooltip": { "HiddenFromPlayers": "Nascosto ai giocatori" },
-    "Dialog": { "New": "Nuovo segnaposto", "Edit": "Modifica segnaposto", "Save": "Salva", "Cancel": "Annulla" },
+    "Tooltip": {
+      "HiddenFromPlayers": "Nascosto ai giocatori"
+    },
+    "Dialog": {
+      "New": "Nuovo segnaposto",
+      "Edit": "Modifica segnaposto",
+      "Save": "Salva",
+      "Cancel": "Annulla"
+    },
     "Form": {
       "Label": "Etichetta del segnaposto",
       "LabelPlaceholder": "es. rifugio di Londra",
@@ -72,8 +88,13 @@
       "SecretPlaceholder": "Note solo per te",
       "Journal": "Collega a un diario",
       "JournalNone": "— Nessun collegamento —",
-      "Visible": "Visibile ai giocatori"
+      "Visible": "Visibile ai giocatori",
+      "Image": "Immagine (opzionale)",
+      "ImagePlaceholder": "Percorso o URL di un'immagine (o video)",
+      "ImageBrowse": "Sfoglia"
     },
-    "Route": { "AdvanceClock": "Avanza l'orologio" }
+    "Route": {
+      "AdvanceClock": "Avanza l'orologio"
+    }
   }
 }
