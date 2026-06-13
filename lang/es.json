@@ -55,7 +55,8 @@
     },
     "Search": {
       "Placeholder": "Buscar dirección o lugar…",
-      "NotFound": "No se encontró nada."
+      "NotFound": "No se encontró nada.",
+      "PinTag": "marcador"
     },
     "Notify": {
       "ShownToPlayers": "Mapa mostrado a los jugadores.",

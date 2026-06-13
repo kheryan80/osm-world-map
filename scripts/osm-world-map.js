@@ -526,12 +526,20 @@ function initMap() {
 
   try {
     if (L.Control && L.Control.Geocoder) {
-      L.Control.geocoder({
-        defaultMarkGeocode: true,
+      const geocoderControl = L.Control.geocoder({
+        defaultMarkGeocode: false, // lo gestionamos nosotros (volar + abrir ficha si es pin)
         collapsed: false, // barra de búsqueda siempre visible (para DJ y jugadores)
         placeholder: t10n("OSMWM.Search.Placeholder"),
-        errorMessage: t10n("OSMWM.Search.NotFound")
+        errorMessage: t10n("OSMWM.Search.NotFound"),
+        geocoder: buildSearchGeocoder()
       }).addTo(_map);
+      geocoderControl.on("markgeocode", (e) => {
+        const g = e.geocode || {};
+        if (g.bbox) _map.fitBounds(g.bbox, { maxZoom: 16 });
+        else if (g.center) _map.setView(g.center, 14);
+        const pinId = g.properties?.osmwmPinId;
+        if (pinId) openPinPopupById(pinId); // si es uno de nuestros pines, abre su ficha
+      });
     } else {
       console.warn(`${MODULE_ID} | el plugin del buscador (Geocoder) no está disponible.`);
       ui.notifications.warn(t10n("OSMWM.Notify.SearchFailed"));
@@ -563,6 +571,50 @@ function getMarkers() {
   return game.settings.get(MODULE_ID, "markers") ?? [];
 }
 
+// Buscador compuesto: primero los pines del módulo que coincidan por nombre,
+// y además los resultados de direcciones de Nominatim (OSM). Los jugadores solo
+// encuentran pines que les son visibles.
+function buildSearchGeocoder() {
+  const base = L.Control.Geocoder.nominatim();
+  const matchPins = (query) => {
+    const q = (query || "").trim().toLowerCase();
+    if (!q) return [];
+    const isGM = game.user.isGM;
+    return getMarkers()
+      .filter((m) => (isGM || m.visible) && (m.label || "").toLowerCase().includes(q))
+      .map((m) => ({
+        name: `${m.label} · ${t10n("OSMWM.Search.PinTag")}`,
+        center: L.latLng(m.lat, m.lng),
+        bbox: L.latLngBounds([m.lat - 0.01, m.lng - 0.01], [m.lat + 0.01, m.lng + 0.01]),
+        properties: { osmwmPinId: m.id }
+      }));
+  };
+  return {
+    geocode(query, cb, context) {
+      const pins = matchPins(query);
+      base.geocode(query, (results) => cb.call(context, pins.concat(results || [])), context);
+    },
+    suggest(query, cb, context) {
+      const pins = matchPins(query);
+      if (typeof base.suggest === "function") {
+        base.suggest(query, (results) => cb.call(context, pins.concat(results || [])), context);
+      } else {
+        cb.call(context, pins);
+      }
+    },
+    reverse(location, scale, cb, context) {
+      return base.reverse(location, scale, cb, context);
+    }
+  };
+}
+
+function openPinPopupById(id) {
+  if (!_markerLayer) return;
+  _markerLayer.eachLayer((l) => {
+    if (l.osmwmId === id) l.openPopup();
+  });
+}
+
 function renderMarkers() {
   if (!_map || !_markerLayer || !window.L) return;
   hideHoverImage();
@@ -571,6 +623,7 @@ function renderMarkers() {
   for (const m of getMarkers()) {
     if (!isGM && !m.visible) continue; // los jugadores no ven los pines ocultos
     const marker = L.marker([m.lat, m.lng], { icon: makeIcon(m) }).addTo(_markerLayer);
+    marker.osmwmId = m.id;
     if (isGM && !m.visible) {
       marker.setOpacity(0.55); // el DJ ve los ocultos atenuados
       marker.bindTooltip(t10n("OSMWM.Tooltip.HiddenFromPlayers"), { direction: "top" });

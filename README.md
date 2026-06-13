@@ -9,7 +9,7 @@ dentro del juego, con:
 - **Pines enlazados a entradas de diario**: el DJ coloca pines en el mapa; al pulsarlos, se abre el diario de ese lugar.
 - **Imagen opcional por pin**: al pasar el ratón por un pin con imagen, esta se muestra grande abajo a la izquierda de la pantalla de Foundry (estilo *Image Hover*), sin tapar el mapa. Admite imágenes y vídeos, y se elige con el explorador de archivos de Foundry o por URL.
 - **Visibilidad del nombre por pin**: como con los tokens de Foundry, cada pin puede mostrar su nombre **siempre** (por defecto), **solo al pasar el ratón** o **nunca**. El nombre aparece debajo del icono.
-- **Buscador de direcciones/lugares** (geocodificador Nominatim de OSM): escribe un sitio y el mapa vuela allí.
+- **Buscador de direcciones/lugares y de pines**: escribe una dirección o lugar (geocodificador Nominatim de OSM) **o el nombre de uno de tus pines**, y el mapa vuela allí; si es un pin, abre además su ficha.
 - **Rutas con distancia y tiempo estimado** (motor OSRM).
 - **Enganche con Calendaria**: un botón avanza el reloj del juego según el tiempo de la ruta (si tienes Calendaria instalado).
 - **Color del mapa e iconos configurables y combinables**, e interfaz en **seis idiomas**.
@@ -78,7 +78,7 @@ Alternativa manual: copia la carpeta `osm-world-map` dentro de `Data/modules/` d
   ```js
   game.modules.get("osm-world-map").api.open();
   ```
-- **Buscar**: usa la lupa del mapa (arriba a la derecha) para ir a una dirección o lugar.
+- **Buscar**: usa la lupa del mapa (arriba a la derecha) para ir a una dirección o lugar, o para encontrar uno de tus pines escribiendo su nombre. Los jugadores solo encuentran pines que les son visibles.
 - **Añadir un pin** (solo DJ): pulsa el icono de chincheta, haz clic en el mapa y rellena el pin: etiqueta, **visibilidad del nombre** (siempre / al pasar el ratón / nunca), tipo de lugar (icono), **imagen** opcional, nota visible para jugadores, información secreta (solo DJ), enlace a un diario y si es visible para los jugadores.
 - **Imagen al pasar el ratón**: si un pin tiene imagen, al pasar el ratón por encima se muestra grande abajo a la izquierda de la pantalla. Los jugadores solo la ven en pines que les son visibles.
 - **Editar / eliminar un pin** (solo DJ): pulsa el pin y usa los botones del popup.

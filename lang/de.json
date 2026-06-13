@@ -55,7 +55,8 @@
     },
     "Search": {
       "Placeholder": "Adresse oder Ort suchen…",
-      "NotFound": "Nichts gefunden."
+      "NotFound": "Nichts gefunden.",
+      "PinTag": "Pin"
     },
     "Notify": {
       "ShownToPlayers": "Karte den Spielern gezeigt.",
