@@ -48,6 +48,7 @@ const PIN_TYPES = {
   danger: { label: "OSMWM.Pin.Danger", fa: "fa-skull", color: "#8a2020" },
   church: { label: "OSMWM.Pin.Church", fa: "fa-place-of-worship", color: "#4b5d7a" },
   port: { label: "OSMWM.Pin.Port", fa: "fa-anchor", color: "#2b6d6d" },
+  airport: { label: "OSMWM.Pin.Airport", fa: "fa-plane", color: "#3f6f9f" },
   vampire: { label: "OSMWM.Pin.Vampire", svg: FANGS_SVG, color: "#5a1020" },
   occult: { label: "OSMWM.Pin.Occult", svg: EYE_SVG, color: "#3d5a3a" },
   anomaly: { label: "OSMWM.Pin.Anomaly", svg: TENTACLE_SVG, color: "#2f5d4a" },

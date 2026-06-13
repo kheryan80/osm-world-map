@@ -48,7 +48,7 @@ El filtro de color se aplica **solo a las teselas del mapa**: pines, popups, bus
 
 ### Tipos de pin
 
-Además de los de siempre (ciudad, torre, casa franca, PNJ, pista, peligro, iglesia, puerto, guarida vampírica), hay tres tipos genéricos útiles para cualquier ambientación: **culto/ocultismo** (ojo), **criatura/anomalía** (pulpo) y **archivo/biblioteca** (libro). Cada estilo de iconos les da su propia forma; los pines que ya tengas creados siguen funcionando al cambiar de ambientación.
+Tipos disponibles: genérico, ciudad, torre/fortaleza, casa franca, PNJ/contacto, pista, peligro, iglesia/templo, **puerto** (ancla), **aeropuerto** (avión), guarida vampírica, **culto/ocultismo** (ojo), **criatura/anomalía** (pulpo) y **archivo/biblioteca** (libro). Cada estilo de iconos les da su propia forma; los pines que ya tengas creados siguen funcionando al cambiar de ambientación.
 
 ## Idiomas / Languages
 
