@@ -1,4 +1,4 @@
-# OSM World Map (prototipo v0.1)
+# OSM World Map
 
 [![Versión](https://img.shields.io/github/v/release/kheryan80/osm-world-map?label=versión&color=8a2020)](https://github.com/kheryan80/osm-world-map/releases)
 [![Descargas](https://img.shields.io/github/downloads/kheryan80/osm-world-map/total?label=descargas&color=8a2020)](https://github.com/kheryan80/osm-world-map/releases)
