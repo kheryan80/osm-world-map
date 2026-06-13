@@ -88,16 +88,35 @@ function glyphFor(family, typeKey) {
   return src.svg ? src.svg : `<i class="fa-solid ${src.fa}"></i>`;
 }
 
-function makeIcon(typeKey) {
+// Familia de iconos según el ajuste "iconStyle" (independiente del color del
+// mapa). "auto" usa la familia que corresponde a la ambientación del mapa.
+function iconFamily() {
+  const s = game.settings.get(MODULE_ID, "iconStyle") || "auto";
+  if (s === "auto") return skinFamily(game.settings.get(MODULE_ID, "theme") || "none");
+  if (s === "normal" || s === "none") return "none";
+  return s; // "vampire" | "cthulhu" | "deltagreen"
+}
+
+// HTML de la etiqueta de nombre del pin según su modo de visibilidad.
+// "always" (por defecto) siempre visible, "hover" solo al pasar el ratón,
+// "never" no se muestra.
+function nameHtml(label, mode) {
+  if (!label || mode === "never") return "";
+  const cls = mode === "hover" ? "owm-name-hover" : "owm-name-always";
+  return `<span class="owm-pin-name ${cls}">${escapeHtml(label)}</span>`;
+}
+
+function makeIcon(m) {
+  const typeKey = m.type || "generic";
   const t = PIN_TYPES[typeKey] || PIN_TYPES.generic;
-  const theme = game.settings.get(MODULE_ID, "theme") || "none";
-  const family = skinFamily(theme);
+  const family = iconFamily();
   const inner = glyphFor(family, typeKey);
+  const name = nameHtml(m.label, m.nameDisplay || "always");
 
   // Vampiro: gota roja sangre, borde negro, glifo hueso.
   if (family === "vampire") {
     return L.divIcon({
-      html: `<div class="owm-pin-vamp owm-pin-${typeKey}"><span class="owm-pin-vamp-body"></span><span class="owm-pin-vamp-glyph">${inner}</span></div>`,
+      html: `<div class="owm-pin-vamp owm-pin-${typeKey}"><span class="owm-pin-vamp-body"></span><span class="owm-pin-vamp-glyph">${inner}</span></div>${name}`,
       className: "owm-pin-divicon",
       iconSize: [30, 40],
       iconAnchor: [15, 34],
@@ -108,7 +127,7 @@ function makeIcon(typeKey) {
   // La Llamada de Cthulhu: sello de cera/pergamino, glifo crema.
   if (family === "cthulhu") {
     return L.divIcon({
-      html: `<div class="owm-pin-coc owm-pin-${typeKey}"><span class="owm-pin-coc-body"></span><span class="owm-pin-coc-glyph">${inner}</span></div>`,
+      html: `<div class="owm-pin-coc owm-pin-${typeKey}"><span class="owm-pin-coc-body"></span><span class="owm-pin-coc-glyph">${inner}</span></div>${name}`,
       className: "owm-pin-divicon",
       iconSize: [32, 32],
       iconAnchor: [16, 16],
@@ -119,7 +138,7 @@ function makeIcon(typeKey) {
   // Delta Green: marcador rombo "clasificado", glifo verde fósforo.
   if (family === "deltagreen") {
     return L.divIcon({
-      html: `<div class="owm-pin-dg owm-pin-${typeKey}"><span class="owm-pin-dg-body"></span><span class="owm-pin-dg-glyph">${inner}</span></div>`,
+      html: `<div class="owm-pin-dg owm-pin-${typeKey}"><span class="owm-pin-dg-body"></span><span class="owm-pin-dg-glyph">${inner}</span></div>${name}`,
       className: "owm-pin-divicon",
       iconSize: [30, 30],
       iconAnchor: [15, 15],
@@ -129,7 +148,7 @@ function makeIcon(typeKey) {
 
   // Tema normal: círculo de color por tipo (comportamiento original).
   return L.divIcon({
-    html: `<div class="owm-pin-icon" style="background:${t.color}">${inner}</div>`,
+    html: `<div class="owm-pin-icon" style="background:${t.color}">${inner}</div>${name}`,
     className: "owm-pin-divicon",
     iconSize: [30, 30],
     iconAnchor: [15, 15],
@@ -247,6 +266,23 @@ Hooks.once("init", () => {
     },
     default: "carto-dark",
     onChange: () => reloadTiles()
+  });
+
+  game.settings.register(MODULE_ID, "iconStyle", {
+    scope: "world",
+    config: true,
+    name: "OSMWM.Settings.IconStyle.Name",
+    hint: "OSMWM.Settings.IconStyle.Hint",
+    type: String,
+    choices: {
+      auto: "OSMWM.Settings.IconStyle.Auto",
+      none: "OSMWM.Settings.IconStyle.None",
+      vampire: "OSMWM.Settings.IconStyle.Vampire",
+      cthulhu: "OSMWM.Settings.IconStyle.Cthulhu",
+      deltagreen: "OSMWM.Settings.IconStyle.DeltaGreen"
+    },
+    default: "auto",
+    onChange: () => renderMarkers()
   });
 
   game.settings.register(MODULE_ID, "startView", {
@@ -534,7 +570,7 @@ function renderMarkers() {
   const isGM = game.user.isGM;
   for (const m of getMarkers()) {
     if (!isGM && !m.visible) continue; // los jugadores no ven los pines ocultos
-    const marker = L.marker([m.lat, m.lng], { icon: makeIcon(m.type) }).addTo(_markerLayer);
+    const marker = L.marker([m.lat, m.lng], { icon: makeIcon(m) }).addTo(_markerLayer);
     if (isGM && !m.visible) {
       marker.setOpacity(0.55); // el DJ ve los ocultos atenuados
       marker.bindTooltip(t10n("OSMWM.Tooltip.HiddenFromPlayers"), { direction: "top" });
@@ -690,6 +726,7 @@ async function handleAddPin(latlng) {
     lng: latlng.lng,
     label: data.label,
     type: data.type,
+    nameDisplay: data.nameDisplay,
     image: data.image,
     note: data.note,
     secret: data.secret,
@@ -708,7 +745,7 @@ async function editMarker(id) {
   if (!data) return;
   const updated = markers.map((x) =>
     x.id === id
-      ? { ...x, label: data.label, type: data.type, image: data.image, note: data.note, secret: data.secret, journalUuid: data.journalUuid, visible: data.visible }
+      ? { ...x, label: data.label, type: data.type, nameDisplay: data.nameDisplay, image: data.image, note: data.note, secret: data.secret, journalUuid: data.journalUuid, visible: data.visible }
       : x
   );
   await game.settings.set(MODULE_ID, "markers", updated);
@@ -774,6 +811,12 @@ async function promptPinDialog(initial = {}) {
     <div class="owm-form">
       <label>${t10n("OSMWM.Form.Label")}</label>
       <input type="text" name="label" placeholder="${t10n("OSMWM.Form.LabelPlaceholder")}" value="${escapeHtml(initial.label ?? "")}" autofocus/>
+      <label>${t10n("OSMWM.Form.NameDisplay")}</label>
+      <select name="nameDisplay">
+        <option value="always"${(initial.nameDisplay ?? "always") === "always" ? " selected" : ""}>${t10n("OSMWM.Form.NameAlways")}</option>
+        <option value="hover"${initial.nameDisplay === "hover" ? " selected" : ""}>${t10n("OSMWM.Form.NameHover")}</option>
+        <option value="never"${initial.nameDisplay === "never" ? " selected" : ""}>${t10n("OSMWM.Form.NameNever")}</option>
+      </select>
       <label>${t10n("OSMWM.Form.Type")}</label>
       <select name="type">${typeOptions}</select>
       <label>${t10n("OSMWM.Form.Image")}</label>
@@ -793,6 +836,7 @@ async function promptPinDialog(initial = {}) {
   const read = (root) => ({
     label: root.querySelector('[name="label"]')?.value || t10n("OSMWM.Popup.DefaultLabel"),
     type: root.querySelector('[name="type"]')?.value || "generic",
+    nameDisplay: root.querySelector('[name="nameDisplay"]')?.value || "always",
     image: root.querySelector('[name="image"]')?.value?.trim() || "",
     note: root.querySelector('[name="note"]')?.value || "",
     secret: root.querySelector('[name="secret"]')?.value || "",

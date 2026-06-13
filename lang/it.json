@@ -6,12 +6,21 @@
         "Hint": "Server delle tessere. Per impostazione predefinita OpenStreetMap. (Ricorda di rispettare le politiche d'uso del server scelto.)"
       },
       "Theme": {
-        "Name": "Ambientazione (tema visivo)",
-        "Hint": "Aspetto della mappa e dei segnaposto. Nessuna opzione richiede una chiave API o servizi extra.",
+        "Name": "Stile della mappa (colore)",
+        "Hint": "Colore e aspetto della base della mappa. Le icone dei segnaposto si impostano a parte, sotto.",
         "None": "Normale (OpenStreetMap)",
         "CartoDark": "Vampiro — CARTO scuro + rosso",
         "Cthulhu": "Il Richiamo di Cthulhu — mappa seppia invecchiata",
         "DeltaGreen": "Delta Green — scuro, classificato, verde"
+      },
+      "IconStyle": {
+        "Name": "Stile delle icone",
+        "Hint": "Aspetto dei segnaposto, indipendente dalla mappa. «Come la mappa» usa le icone dello stile di mappa scelto.",
+        "Auto": "Come la mappa",
+        "None": "Normale (cerchi colorati)",
+        "Vampire": "Vampiro (gocce di sangue)",
+        "Cthulhu": "Il Richiamo di Cthulhu (sigilli di cera)",
+        "DeltaGreen": "Delta Green (rombi classificati)"
       }
     },
     "Keybind": {
@@ -91,7 +100,11 @@
       "Visible": "Visibile ai giocatori",
       "Image": "Immagine (opzionale)",
       "ImagePlaceholder": "Percorso o URL di un'immagine (o video)",
-      "ImageBrowse": "Sfoglia"
+      "ImageBrowse": "Sfoglia",
+      "NameDisplay": "Visibilità del nome",
+      "NameAlways": "Sempre",
+      "NameHover": "Al passaggio del mouse",
+      "NameNever": "Mai"
     },
     "Route": {
       "AdvanceClock": "Avanza l'orologio"

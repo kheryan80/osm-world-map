@@ -6,12 +6,21 @@
         "Hint": "Kachelserver. Standardmäßig OpenStreetMap. (Bitte die Nutzungsrichtlinie des gewählten Servers beachten.)"
       },
       "Theme": {
-        "Name": "Setting (visuelles Thema)",
-        "Hint": "Aussehen der Karte und der Marker. Keine Option benötigt einen API-Schlüssel oder zusätzliche Dienste.",
+        "Name": "Kartenstil (Farbe)",
+        "Hint": "Farbe und Aussehen der Kartenbasis. Die Pin-Symbole werden unten separat festgelegt.",
         "None": "Normal (OpenStreetMap)",
         "CartoDark": "Vampir — CARTO dunkel + Rot",
         "Cthulhu": "Cthulhus Ruf — gealterte Sepia-Karte",
         "DeltaGreen": "Delta Green — geheim, dunkelgrün"
+      },
+      "IconStyle": {
+        "Name": "Stil der Pin-Symbole",
+        "Hint": "Aussehen der Pins, unabhängig von der Karte. „Wie Karte“ verwendet die Symbole des gewählten Kartenstils.",
+        "Auto": "Wie Karte",
+        "None": "Normal (farbige Kreise)",
+        "Vampire": "Vampir (Blutstropfen)",
+        "Cthulhu": "Cthulhus Ruf (Wachssiegel)",
+        "DeltaGreen": "Delta Green (geheime Rauten)"
       }
     },
     "Keybind": {
@@ -91,7 +100,11 @@
       "Visible": "Für Spieler sichtbar",
       "Image": "Bild (optional)",
       "ImagePlaceholder": "Pfad oder URL eines Bildes (oder Videos)",
-      "ImageBrowse": "Durchsuchen"
+      "ImageBrowse": "Durchsuchen",
+      "NameDisplay": "Namensanzeige",
+      "NameAlways": "Immer",
+      "NameHover": "Beim Überfahren",
+      "NameNever": "Nie"
     },
     "Route": {
       "AdvanceClock": "Uhr vorstellen"

@@ -6,12 +6,21 @@
         "Hint": "Serveur de tuiles. OpenStreetMap par défaut. (Pensez à respecter la politique d'utilisation du serveur choisi.)"
       },
       "Theme": {
-        "Name": "Ambiance (thème visuel)",
-        "Hint": "Apparence de la carte et des marqueurs. Aucune option ne nécessite de clé API ni de services supplémentaires.",
+        "Name": "Style de la carte (couleur)",
+        "Hint": "Couleur et apparence du fond de carte. Les icônes des marqueurs se règlent séparément ci-dessous.",
         "None": "Normal (OpenStreetMap)",
         "CartoDark": "Vampire — CARTO sombre + rouge",
         "Cthulhu": "L'Appel de Cthulhu — carte sépia vieillie",
         "DeltaGreen": "Delta Green — sombre, classifié, vert"
+      },
+      "IconStyle": {
+        "Name": "Style des icônes",
+        "Hint": "Apparence des marqueurs, indépendante de la carte. « Selon la carte » utilise les icônes du style de carte choisi.",
+        "Auto": "Selon la carte",
+        "None": "Normal (cercles colorés)",
+        "Vampire": "Vampire (gouttes de sang)",
+        "Cthulhu": "L'Appel de Cthulhu (sceaux de cire)",
+        "DeltaGreen": "Delta Green (losanges classifiés)"
       }
     },
     "Keybind": {
@@ -91,7 +100,11 @@
       "Visible": "Visible par les joueurs",
       "Image": "Image (optionnel)",
       "ImagePlaceholder": "Chemin ou URL d'une image (ou vidéo)",
-      "ImageBrowse": "Parcourir"
+      "ImageBrowse": "Parcourir",
+      "NameDisplay": "Visibilité du nom",
+      "NameAlways": "Toujours",
+      "NameHover": "Au survol",
+      "NameNever": "Jamais"
     },
     "Route": {
       "AdvanceClock": "Avancer l'horloge"

@@ -6,12 +6,21 @@
         "Hint": "Servidor de tiles. OpenStreetMap por padrão. (Lembre-se de respeitar a política de uso do servidor escolhido.)"
       },
       "Theme": {
-        "Name": "Ambientação (tema visual)",
-        "Hint": "Aparência do mapa e dos marcadores. Nenhuma opção precisa de chave de API ou serviços extras.",
+        "Name": "Estilo do mapa (cor)",
+        "Hint": "Cor e aparência da base do mapa. Os ícones dos marcadores são definidos à parte, abaixo.",
         "None": "Normal (OpenStreetMap)",
         "CartoDark": "Vampiro — CARTO escuro + vermelho",
         "Cthulhu": "Chamado de Cthulhu — mapa sépia envelhecido",
         "DeltaGreen": "Delta Green — escuro, classificado, verde"
+      },
+      "IconStyle": {
+        "Name": "Estilo dos ícones",
+        "Hint": "Aparência dos marcadores, independente do mapa. \"Conforme o mapa\" usa os ícones do estilo de mapa escolhido.",
+        "Auto": "Conforme o mapa",
+        "None": "Normal (círculos coloridos)",
+        "Vampire": "Vampiro (gotas de sangue)",
+        "Cthulhu": "Chamado de Cthulhu (selos de cera)",
+        "DeltaGreen": "Delta Green (losangos classificados)"
       }
     },
     "Keybind": {
@@ -91,7 +100,11 @@
       "Visible": "Visível aos jogadores",
       "Image": "Imagem (opcional)",
       "ImagePlaceholder": "Caminho ou URL de uma imagem (ou vídeo)",
-      "ImageBrowse": "Procurar"
+      "ImageBrowse": "Procurar",
+      "NameDisplay": "Visibilidade do nome",
+      "NameAlways": "Sempre",
+      "NameHover": "Ao passar o mouse",
+      "NameNever": "Nunca"
     },
     "Route": {
       "AdvanceClock": "Avançar relógio"

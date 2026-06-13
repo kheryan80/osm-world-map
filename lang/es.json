@@ -6,12 +6,21 @@
         "Hint": "Servidor de teselas. Por defecto OpenStreetMap. (Recuerda respetar la política de uso del servidor que elijas.)"
       },
       "Theme": {
-        "Name": "Ambientación (tema visual)",
-        "Hint": "Estética del mapa y de los pines. Ninguna opción necesita clave ni servicios extra.",
+        "Name": "Estilo del mapa (color)",
+        "Hint": "Color y aspecto de la base del mapa. Los iconos de los pines se eligen aparte, abajo.",
         "None": "Normal (OpenStreetMap)",
         "CartoDark": "Vampiro — CARTO oscuro + rojo",
         "Cthulhu": "La Llamada de Cthulhu — mapa sepia envejecido",
         "DeltaGreen": "Delta Green — oscuro clasificado verde"
+      },
+      "IconStyle": {
+        "Name": "Estilo de los iconos",
+        "Hint": "Aspecto de los pines, independiente del mapa. «Según el mapa» usa los iconos del estilo de mapa elegido.",
+        "Auto": "Según el mapa",
+        "None": "Normal (círculos de color)",
+        "Vampire": "Vampiro (gotas de sangre)",
+        "Cthulhu": "La Llamada de Cthulhu (sellos de cera)",
+        "DeltaGreen": "Delta Green (rombos clasificados)"
       }
     },
     "Keybind": {
@@ -91,7 +100,11 @@
       "Visible": "Visible para los jugadores",
       "Image": "Imagen (opcional)",
       "ImagePlaceholder": "Ruta o URL de una imagen (o vídeo)",
-      "ImageBrowse": "Examinar"
+      "ImageBrowse": "Examinar",
+      "NameDisplay": "Visibilidad del nombre",
+      "NameAlways": "Siempre",
+      "NameHover": "Al pasar el ratón",
+      "NameNever": "Nunca"
     },
     "Route": {
       "AdvanceClock": "Avanzar reloj"

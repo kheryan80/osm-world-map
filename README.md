@@ -5,6 +5,7 @@ dentro del juego, con:
 
 - **Pines enlazados a entradas de diario**: el DJ coloca pines en el mapa; al pulsarlos, se abre el diario de ese lugar.
 - **Imagen opcional por pin**: al pasar el ratón por un pin con imagen, esta se muestra grande abajo a la izquierda de la pantalla de Foundry (estilo *Image Hover*), sin tapar el mapa. Admite imágenes y vídeos, y se elige con el explorador de archivos de Foundry o por URL.
+- **Visibilidad del nombre por pin**: como con los tokens de Foundry, cada pin puede mostrar su nombre **siempre** (por defecto), **solo al pasar el ratón** o **nunca**.
 - **Buscador de direcciones/lugares** (geocodificador Nominatim de OSM): escribe un sitio y el mapa vuela allí.
 - **Rutas con distancia y tiempo estimado** (motor OSRM).
 - **Enganche con Calendaria**: un botón avanza el reloj del juego según el tiempo de la ruta (si tienes Calendaria instalado).
@@ -15,6 +16,8 @@ dentro del juego, con:
 ---
 
 ## Ambientaciones (skins) — v0.7
+
+> Desde v1.2 el **color del mapa** y el **estilo de los iconos** se eligen por separado en la configuración del módulo. Puedes combinarlos libremente (p. ej. mapa normal con iconos de Delta Green, o mapa vampírico con iconos de Cthulhu). Por defecto, los iconos siguen al estilo del mapa.
 
 En *Gestionar módulos → Configurar ajustes → OSM World Map* tienes **Tema visual del mapa**:
 

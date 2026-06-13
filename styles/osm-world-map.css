@@ -608,3 +608,28 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+/* Etiqueta de nombre del pin (estilo "placa", encima del icono). */
+.owm-pin-name {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  margin-top: 3px;
+  padding: 1px 6px;
+  background: rgba(10, 12, 18, 0.85);
+  color: #f0e9e9;
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  border-radius: 4px;
+  font: 600 11px/1.3 var(--font-primary, "Signika", sans-serif);
+  white-space: nowrap;
+  pointer-events: none;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9);
+  z-index: 5;
+}
+.owm-pin-name.owm-name-hover {
+  display: none;
+}
+.owm-pin-divicon:hover .owm-pin-name.owm-name-hover {
+  display: block;
+}

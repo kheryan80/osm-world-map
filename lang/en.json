@@ -6,12 +6,21 @@
         "Hint": "Tile server. OpenStreetMap by default. (Remember to respect the usage policy of whichever server you choose.)"
       },
       "Theme": {
-        "Name": "Setting (visual theme)",
-        "Hint": "Look of the map and pins. None of the options need an API key or extra services.",
+        "Name": "Map style (color)",
+        "Hint": "Color and look of the map base. The pin icons are set separately below.",
         "None": "Normal (OpenStreetMap)",
         "CartoDark": "Vampire — dark CARTO + red",
         "Cthulhu": "Call of Cthulhu — aged sepia map",
         "DeltaGreen": "Delta Green — classified dark green"
+      },
+      "IconStyle": {
+        "Name": "Pin icon style",
+        "Hint": "Look of the pins, independent from the map. 'Match map style' uses the icons of the chosen map style.",
+        "Auto": "Match map style",
+        "None": "Normal (colored circles)",
+        "Vampire": "Vampire (blood drops)",
+        "Cthulhu": "Call of Cthulhu (wax seals)",
+        "DeltaGreen": "Delta Green (classified diamonds)"
       }
     },
     "Keybind": {
@@ -91,7 +100,11 @@
       "Visible": "Visible to players",
       "Image": "Image (optional)",
       "ImagePlaceholder": "Path or URL to an image (or video)",
-      "ImageBrowse": "Browse"
+      "ImageBrowse": "Browse",
+      "NameDisplay": "Name visibility",
+      "NameAlways": "Always",
+      "NameHover": "On hover",
+      "NameNever": "Never"
     },
     "Route": {
       "AdvanceClock": "Advance clock"
